@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Opportunity Name</th>
+      <th>Sign-In Time</th>
+      <th>Sign-Out Time</th>
+      <th style="text-align:right">Total Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% _.each( prior_commitments_app.data, function(commitment) { %>
+    <tr>
+      <td><%= commitment.opportunity_name %></td>
+      <td><%= prior_commitments_app.pretty_datetime(commitment.signin_time) %></td>
+      <td><%= prior_commitments_app.pretty_datetime(commitment.signout_time) %></td>
+      <td style="text-align:right"><%= commitment.total_time %></td>
+      <td><%= commitment.status %></td>
+    </tr>
+  <% }); %>
+  </tbody>
+</table>

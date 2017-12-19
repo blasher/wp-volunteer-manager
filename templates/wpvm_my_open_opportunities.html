@@ -1,0 +1,40 @@
+<% if (open_opportunities_app.data) { %>
+  <table id="open_opportunities_table">
+    <thead>
+      <tr>
+        <th><b>Volunteering Opportunity</b></th>
+        <th><b>Type</b></th>
+        <th><b>Start Time</b></th>
+        <th><b>Duration (Hrs)</b></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% _.each( open_opportunities_app.data, function(opportunity) { %>
+      <tr>
+        <td>
+         <a id="opportunity_info_link_<%= opportunity.id %>" class="opportunity_info_link wpvm_fancybox" href="#opportunity_info_<%= opportunity.id %>" title="More Information">
+             <%= opportunity.title %>
+         </a>
+        </td>
+        <td><%= opportunity.type %>
+        </td>
+        <td><%= open_opportunities_app.pretty_datetime(opportunity.start_time) %>
+        </td>
+        <td><%= opportunity.duration %>
+        </td>
+        <td>
+          <a id="opportunity_info_link_<%= opportunity.id %>" class="opportunity_info_link wpvm_fancybox" href="#opportunity_info_<%= opportunity.id %>" title="More Information">
+             <img class="wpvm-icon" src="<%= open_opportunities_app.wpvm_url %>/images/Question.png">
+          </a>
+          <a id="opportunity_commit_link_<%= opportunity.id %>" class="opportunity_commit_link" href="javascript: open_opportunities_app.opportunity_commit(<%= opportunity.id %>);" title="Register">
+             <img class="wpvm-icon" src="<%= open_opportunities_app.wpvm_url %>/images/add.png">
+          </a>
+        </td>
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+<p><a href="<%= open_opportunities_app.site_url %>/login/">Please click here to login</a></p>
+<% } %>

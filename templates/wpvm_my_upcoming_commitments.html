@@ -1,0 +1,35 @@
+<table class="table table-striped">
+  <thead class="thead-default">
+    <tr>
+      <th>Opportunity Name</th>
+      <th>Start Time</th>
+      <th>Sign-In Time</th>
+      <th>Sign-Out Time</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% _.each( upcoming_commitments_app.data, function(commitment) { %>
+    <tr>
+      <td>
+       <a id="opportunity_info_link_<%= commitment.opportunity_id %>" class="opportunity_info_link wpvm_fancybox" href="#opportunity_info_<%= commitment.opportunity_id %>" title="More Information">
+           <%= commitment.opportunity_name %>
+       </a>
+      </td>
+      <td><%= upcoming_commitments_app.pretty_datetime(commitment.start_time) %></td>
+      <td><%= upcoming_commitments_app.pretty_datetime(commitment.signin_time) %></td>
+      <td><%= upcoming_commitments_app.pretty_datetime(commitment.signout_time) %></td>
+      <td><%= commitment.status %></td>
+      <td>
+        <a id="commitment_delete_link_<%= commitment.id %>" class="commitment_delete_link" href="javascript: upcoming_commitments_app.commitment_delete(<%= commitment.id %>);">
+            <img class="wpvm-icon" src="<%= upcoming_commitments_app.wpvm_url %>/images/remove.png">
+        </a>
+        <a id="commitment_inout_link_<%= commitment.id %>" class="commitment_inout_link" href="javascript: upcoming_commitments_app.commitment_inout(<%= commitment.id %>);">
+            <img class="wpvm-icon" src="<%= upcoming_commitments_app.wpvm_url %>/images/Alarm.png">
+        </a>
+      </td>
+    </tr>
+  <% }); %>
+  </tbody>
+</table>

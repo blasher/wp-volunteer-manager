@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th>Opportunity Name</th>
+      <th>Type</th>
+      <th>Location</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% _.each( open_opportunities_app.data, function(opportunity) { %>
+    <tr>
+      <td>
+        <a id="opportunity_info_link_<%= opportunity.id %>" class="opportunity_info_link wpvm_fancybox" href="#opportunity_info_<%= opportunity.id %>" title="More Information">
+           <h5><%= opportunity.title %></h5>
+        </a>
+      </td>
+
+      <td><%= opportunity.type %></td>
+      <td><%= opportunity.location %></td>
+      <td><%= opportunity.start_time %></td>
+      <td><%= opportunity.end_time %></td>
+      <td>
+        <a id="opportunity_commit_link_<%= opportunity.id %>" class="opportunity_commit_link" href="javascript: open_opportunities_app.opportunity_commit(<%= opportunity.id %>);">
+           <img class="wpvm-icon" src="<%= open_opportunities_app.wpvm_url %>/images/add.png">
+        </a>
+      </td>
+    </tr>
+  <% }); %>
+  </tbody>
+</table>

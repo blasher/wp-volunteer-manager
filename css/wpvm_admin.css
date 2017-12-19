@@ -1,0 +1,88 @@
+/*
+
+Plugin Name: WP Volunteer Manager
+Plugin URI:  http://www.brianlasher.com/
+Description: A plugin to manage volunteers and volunteering opportunities
+Author:      <a href="http://www.brianlasher.com/">Brian Lasher</a>
+Author URI:  http://brianlasher.com
+
+**************************************************************************
+
+Copyright 2012  Brian Lasher ( me@brianlasher.com)
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+
+/* WPVM PAGE TITLE - this is left over from bpur */
+
+.page-title-action
+{   margin-left: 4px;
+    padding: 4px 8px;
+    position: relative;
+    top: -3px;
+    text-decoration: none;
+    border: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #e0e0e0;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.page-title-action:hover
+{
+    background: #00a0d2;
+    color: #ffffff;
+}
+
+
+/* WPVM MESSAGES */
+
+
+div.wpvm_messages
+{ 
+	margin-right: 20px;
+	border-left: 3px solid rgb(122, 208, 58);
+	box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 1px 0px;
+	padding: 0px 20px 20px 20px;
+	background-color: #fff;
+}
+
+div.wpvm_errors
+{ 
+	margin-right: 20px;
+	border-left: 3px solid rgb(213, 78, 33);
+	box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 1px 0px;
+	padding: 0px 20px 20px 20px;
+	background-color: rgb(254, 247, 241);
+}
+
+
+
+/* WPVM ADMIN MENU */
+
+ul.wpvm_admin_menu
+{	clear: both;
+}
+
+li.wpvm_admin_menu_item
+{	float: left;
+	margin-right: 10px;
+}
+
+
